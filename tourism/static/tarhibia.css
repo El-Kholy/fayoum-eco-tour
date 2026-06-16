@@ -1,0 +1,232 @@
+/* ===== Reset & Fonts ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url("/static/data/el_fayoum.png") center center / cover no-repeat;
+    direction: rtl;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.logo img {
+    width: 80px;
+    transition: 0.3s;
+}
+
+.lang button {
+    
+
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(232, 228, 228, 0.3);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #103f49;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #1c6e7f;
+}
+
+.hero span {
+    color: #0c718a;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 100px;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.link1,
+.link2 {
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 12px 25px;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.link1 {
+    color: white;
+    background-color: rgba(44, 124, 140, 0.85);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.34);
+}
+
+.link1:hover {
+    background-color: rgba(35, 102, 111, 0.85);
+    transform: translateY(-2px);
+}
+
+.link2 {
+    color: #0b4c5f;
+    background: rgba(217, 217, 217, 0.85);
+    box-shadow: 0 5px 15px rgba(13, 12, 12, 0.48);
+}
+
+.link2:hover {
+    background: rgba(199, 199, 199, 0.85);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== Responsive ===== */
+
+/* Large Laptop: 1200px وأقل */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 21px;
+    }
+}
+
+/* Laptop: 992px وأقل */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .buttons {
+        margin-top: 60px;
+    }
+
+    .link1,
+    .link2 {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+}
+
+/* Tablet: 768px وأقل */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 17px;
+        padding: 0 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .link1,
+    .link2 {
+        width: 70%;
+        margin: 8px auto;
+    }
+}
+
+/* Mobile: 600px وأقل */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .lang {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .buttons {
+        margin-top: 40px;
+        gap: 10px;
+    }
+
+    .link1,
+    .link2 {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        margin: 8px auto;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}

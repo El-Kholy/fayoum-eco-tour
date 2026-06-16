@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>أبرز فنادق الفيوم</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'hotel.css' %}?v=20" />
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+<body class="bg-gray-50">
+
+    <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url(/static/data/bg.png);">
+        </div>
+        <div class="absolute inset-0 bg-black/40"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h1 id="hero-text" class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            اختار إقامتك المثالية.. لأن راحتك مش رفاهية ،<br>دي أولوية
+        </h1>
+        <button onclick="document.getElementById('hotels-section').scrollIntoView({ behavior: 'smooth' })"
+            class="bg-emerald-700 hover:bg-emerald-800 text-white text-xl font-medium px-12 py-5 rounded-full transition">
+            <span id="hero-btn">أبرز فنادق الفيوم</span>
+        </button>
+        </div>
+    </section>
+    <section id="hotels-section" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 id="section-title" class="text-4xl font-bold text-center text-emerald-900 mb-12">أبرز فنادق الفيوم</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                         <div class="h-[300px] w-full"><img src="{% static 'data/harm.JPG' %}" alt="الفيوم" class="w-full h-full object-cover shadow-inner"  /></div>
+                        <div class="p-6">
+                            <h3 id="h1_name" class="text-2xl font-bold text-emerald-800">فندق الاهرام</h3>
+                            <p id="h1_desc" class="text-emerald-700 mt-1">فندق اهرامات تونس يتميز بمسبح خارجي وحديقة ومنطقة شاطئ خاص.</p>
+                            <p id="h1_loc" class="text-sm text-gray-600 mt-4">قرية تونس - الفيوم</p>
+                            <span>
+                                {% if request.session.user_id %}
+                                    <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                                    <a href="{% url 'haram' %}" id="card1Link" > 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% else %}
+                                    <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                                     <a href="{% url 'tarhibia' %}" id="card1Link"> 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                         <div class="h-[300px] w-full"><img src="{% static 'data/القوات.JPG' %}" alt="الفيوم" class="w-full h-full object-cover shadow-inner"  /></div>
+                        <div class="p-6">
+                            <h3 id="h2_name" class="text-2xl font-bold text-emerald-800">فندق القوات المسلحة</h3>
+                            <p id="h2_desc" class="text-emerald-700 mt-1">سماء زرقاء ومياه هادئة وإقامة فاخرة بنادي وفندق ضباط القوات المسلحة.</p>
+                            <p id="h2_loc" class="text-sm text-gray-600 mt-4">منطقة البحيرة - الفيوم</p>
+                            <span>
+                                {% if request.session.user_id %}
+                                    <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                                    <a href="{% url 'qawat' %}" id="card1Link" > 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% else %}
+                                    <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                                     <a href="{% url 'tarhibia' %}" id="card1Link"> 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+              
+                <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="hotel-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                         <div class="h-[300px] w-full"><img src="{% static 'data/تونس.JPG' %}" alt="الفيوم" class="w-full h-full object-cover shadow-inner"  /></div>
+                        <div class="p-6">
+                            <h3 id="h3_name" class="text-2xl font-bold text-emerald-800">منتجع</h3>
+                            <p id="h3_desc" class="text-emerald-700 mt-1">منتجع  في قلب الفيوم، فطار فلاحي على الأصول وطبيعة هادئة.</p>
+                            <p id="h3_loc" class="text-sm text-gray-600 mt-4">منتجع - الفيوم</p>
+                            <span>
+                                {% if request.session.user_id %}
+                                    <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                                    <a href="{% url 'montagau' %}" id="card1Link" > 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% else %}
+                                    <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                                     <a href="{% url 'tarhibia' %}" id="card1Link"> 
+                                        <button id="h1_btn" class="bookBtn mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+                                         المزيد من التفاصيل
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="bg-emerald-900 text-white py-8 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p id="footer-text">© 2026 Fayoum Eco Tours - جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+    <script src="{% static 'hotel.js' %}?v=2"></script>
+    
+</body>
+</html>

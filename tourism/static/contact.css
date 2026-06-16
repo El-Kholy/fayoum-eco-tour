@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+body {
+    background: #f3f3f3;
+    padding: 20px 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 75%;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    direction: ltr;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap: 16px;
+}
+
+/* عربي: لغة+بروفايل شمال | ناف وسط | لوجو يمين */
+.lang       { order: 1; }
+.nav-links  { order: 2; margin: 0 auto; direction: rtl; }
+.logo       { order: 3; }
+.profile    { order: 0; }
+
+/* إنجليزي: لوجو شمال | ناف وسط | لغة+بروفايل يمين */
+[dir="ltr"] .logo      { order: 1; }
+[dir="ltr"] .nav-links { order: 2; direction: ltr; }
+[dir="ltr"] .lang      { order: 3; }
+[dir="ltr"] .profile   { order: 4; }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img { width: 60px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #0d5c4d; }
+
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang button {
+    background: transparent;
+    border: none;
+    color: teal;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "Cairo", sans-serif;
+    padding: 4px 6px;
+    transition: 0.2s;
+}
+
+.lang button:hover { color: #0d5c4d; }
+.lang span { color: #aaa; }
+
+.profile a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: teal;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.profile a:hover {
+    background: #0d5c4d;
+    transform: scale(1.1);
+}
+
+/* ===== HERO ===== */
+.hero {
+    width: 75%;
+    height: 300px;
+    margin: auto;
+    background: url('/static/data/324.JPG') center/cover no-repeat;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.overlay h1 { font-size: 35px; margin-bottom: 10px; }
+.overlay p  { font-size: 16px; }
+
+/* ===== CONTACT ===== */
+.contact-container {
+    width: 75%;
+    margin: 25px auto;
+    display: flex;
+    gap: 25px;
+}
+
+.contact-info {
+    width: 30%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h2 {
+    margin-bottom: 25px;
+    color: #0d5c4d;
+    font-size: 22px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 15px;
+}
+
+.contact-info i {
+    color: #0d5c4d;
+    margin-left: 10px;
+}
+
+[dir="ltr"] .contact-info i {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    color: #444;
+}
+
+.social-icons a:hover {
+    background: #0d5c4d;
+    color: white;
+}
+
+.contact-form {
+    width: 70%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 25px;
+    color: #0d5c4d;
+    font-size: 22px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    font-family: "Cairo", sans-serif;
+    text-align: right;
+}
+
+[dir="ltr"] .contact-form input,
+[dir="ltr"] .contact-form textarea {
+    text-align: left;
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #0d5c4d;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Cairo", sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover { background: #08463a; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 992px) {
+    .navbar, .hero, .contact-container { width: 90%; }
+    .contact-container { flex-direction: column; }
+    .contact-info, .contact-form { width: 100%; }
+    .navbar { flex-wrap: wrap; gap: 15px; }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        order: 10;
+        width: 100%;
+    }
+    .overlay h1 { font-size: 28px; }
+}

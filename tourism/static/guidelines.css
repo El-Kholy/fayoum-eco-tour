@@ -1,0 +1,406 @@
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: inherit; /* سيتم تحديدها عبر JS */
+  background-color: #f4f7f2;
+  color: #2c3e2d;
+  overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+
+a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: teal;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 100;
+}
+/* PROFILE ICON */
+.profile a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.profile a:hover {
+  background: #006666;
+  transform: scale(1.1);
+}
+.logo {
+  width: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* تقليل المسافة قليلاً لتناسب الشاشات */
+}
+
+.nav-links li {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* LANGUAGE */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: teal;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang button:hover {
+  background: rgba(0, 128, 128, 0.1);
+  border-color: rgba(0, 128, 128, 0.2);
+}
+
+/* === HERO === */
+
+
+
+
+
+
+
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px; /* زيادة الحشو الرأسي */
+  gap: 40px; /* زيادة الفجوة */
+  flex-wrap: wrap;
+  background-color: white; /* خلفية بيضاء للتميز */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 32px; /* تكبير العنوان */
+  font-weight: 700;
+  color: #239173;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px; /* تكبير النص */
+  color: #040404;
+  margin-bottom: 6px;
+}
+
+.hero-text .hero-sub {
+  font-size: 15px;
+  color: #466142;
+  line-height: 1.8;
+  border-right: 4px solid #6ec95c;
+  padding-right: 14px;
+  margin-top: 16px;
+}
+
+/* تحديد التنسيق عند تغيير الاتجاه لـ LTR */
+[dir="ltr"] .hero-text .hero-sub {
+  border-right: none;
+  padding-right: 0;
+  border-left: 4px solid #6ec95c;
+  padding-left: 14px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+/* --- تعديل: تكبير الصورة --- */
+.hero-image img {
+  width: 100%; /* تأخذ العرض المتاح للحاوية */
+  max-width: 550px; /* تكبير الحد الأقصى للعرض بشكل كبير */
+  height: 350px; /* تكبير الارتفاع */
+  object-fit: cover;
+  border-radius: 20px; /* زوايا أكثر نعومة */
+  border: 5px solid rgba(255,255,255,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* إضافة ظل للصورة */
+}
+
+/* === MAIN TITLE === */
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.main-title h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e4620;
+}
+
+.btn-settings {
+  background-color: #2d5a27;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-settings:hover {
+  background-color: #3a7530;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* === CARDS SECTION === */
+/* --- تعديل: عرض 2 كارت في الصف --- */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* تحديد عمودين بالضبط */
+  gap: 25px; /* زيادة الفجوة قليلاً */
+  padding: 20px 40px 60px;
+}
+
+/* === BASE CARD === */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  border-right: 6px solid transparent;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تحديد التنسيق عند تغيير الاتجاه لـ LTR */
+[dir="ltr"] .card {
+  border-right: none;
+  border-left: 6px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-header i {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3a1f;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* === DATE BADGE === */
+.date-badge {
+  position: absolute;
+  background: #e74c3c;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10px;
+}
+
+/* تعديل موضع الشارة بناءً على الاتجاه */
+[dir="rtl"] .date-badge { left: -10px; }
+[dir="ltr"] .date-badge { right: -10px; }
+
+/* === CARD COLOR VARIANTS === */
+.card-blue   { border-color: #3498db; }
+.card-blue   .card-header i { background: #ebf5fb; color: #3498db; }
+
+.card-green  { border-color: #27ae60; }
+.card-green  .card-header i { background: #e9f7ef; color: #27ae60; }
+
+.card-orange { border-color: #e67e22; }
+.card-orange .card-header i { background: #fef9e7; color: #e67e22; }
+
+.card-teal   { border-color: #16a085; }
+.card-teal   .card-header i { background: #e8f8f5; color: #16a085; }
+
+.card-purple { border-color: #8e44ad; }
+.card-purple .card-header i { background: #f4ecf7; color: #8e44ad; }
+
+.card-red    { border-color: #e74c3c; }
+.card-red    .card-header i { background: #fdedec; color: #e74c3c; }
+
+.card-indigo { border-color: #2980b9; }
+.card-indigo .card-header i { background: #eaf4fd; color: #2980b9; }
+
+/* === FOOTER === */
+.footer {
+  background: #1e3a1f;
+  color: #c9f0be;
+  text-align: center;
+  padding: 30px 40px;
+}
+
+.emergency {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.emergency-icon {
+  background: white;
+  color: #e74c3c;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+[dir="rtl"] .emergency-icon { margin-left: 6px; }
+[dir="ltr"] .emergency-icon { margin-right: 6px; }
+
+.emergency .num {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.emergency .num strong {
+  color: #ffffff;
+}
+
+[dir="rtl"] .emergency .num strong { margin-right: 4px; }
+[dir="ltr"] .emergency .num strong { margin-left: 4px; }
+
+.footer p {
+  font-size: 13px;
+  color: #8dbb88;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  /* في الشاشات المتوسطة، نجعل الكروت تأخذ العرض الكامل لإبقائها مقروءة */
+  .cards-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-text .hero-sub {
+    border-right: none;
+    border-left: none;
+    padding-right: 0;
+    padding-left: 0;
+    border-top: 2px solid #6ec95c;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-image img {
+    height: 250px;
+  }
+
+  .nav-links {
+    display: none; /* يمكن إضافة قائمة هامبرغر لاحقاً */
+  }
+
+  .main-title {
+    padding: 20px 20px 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cards-section {
+    padding: 16px 20px 40px;
+  }
+}

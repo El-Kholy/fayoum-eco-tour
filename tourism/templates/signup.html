@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Fayoum Eco Tours</title>
+    
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{% static 'final.logo.png' %}">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="lang">
+                <button onclick="changeLang('ar')">AR</button>
+                <span>|</span>
+                <button onclick="changeLang('en')">EN</button>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="logo">
+                <img src="{% static 'data/final.logo.png' %}" alt="logo">
+
+            </div>
+        </header>
+
+        <div class="glass-box">
+            <div class="left">
+                <h1 id="title">
+                    حسابك هو أول خطوة <br>
+                    نحو تجربة لا تُنسى في الفيوم
+                </h1>
+            </div>
+
+            <div class="right">
+                <!-- رسائل الخطأ تظهر هنا بتنسيق لا يخرب الـ Glassmorphism -->
+                
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <input name="first_name" type="text" required placeholder="الاسم الأول">
+                        <input name="last_name" type="text" required placeholder="الاسم الأخير">
+                    </div>
+
+                    <input name="email" class="inp" type="email" placeholder="البريد الإلكتروني" required>
+                    <input name="password" class="inp" type="password" placeholder="كلمة السر" required>
+                    <input name="confirm_password" class="inp" type="password" placeholder="تأكيد كلمة السر" required>
+
+                    <button type="submit" class="signup-btn">إنشاء حساب</button>
+                </form>
+
+                <div class="divider">أو</div>
+                <div class="social">
+                   
+                    <a href="{% url 'social:begin' 'google-oauth2' %}">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+
+                    <a href="{% url 'social:begin' 'facebook' %}">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 Fayoum Eco Tours جميع الحقوق محفوظة
+        </div>
+    </div>
+
+    <script src="{% static 'signup.js' %}"></script>
+</body>
+</html>

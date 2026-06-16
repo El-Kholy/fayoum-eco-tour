@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fayoum Eco Tour - Guidelines</title>
+  
+  <!-- تعديل مسارات الـ CSS لتستخدم الـ static -->
+  <link rel="stylesheet" href="{% static 'guidelines.css' %}" />
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <!-- تعديل مسار اللوجو -->
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1 id="heroTitle">إرشادات وتعليمات الموقع</h1>
+        <p id="heroSub1">نصائح لرحلة آمنة ومستدامة في الفيوم</p>
+        <p id="heroSub2" class="hero-sub">
+          عشان رحلتك للفيوم تكون ذكرى ما تتنسيش<br />
+          جمعنالك أهم النصائح والإرشادات اللي هتساعدك<br />
+          تستمتع بكل لحظة بأمان
+        </p>
+      </div>
+      <div class="hero-image">
+        
+        <img src="{% static 'data/155700.jpg' %}" alt="الفيوم" />
+      </div>
+    </div>
+
+    <!-- باقي المحتوى (الكروت) يبقى كما هو لأنه نصوص ثابتة -->
+    <section class="main-title">
+        <h2 id="mainTitleText">إرشادات استخدام الموقع "Fayoum Eco Tour"</h2>
+    </section>
+
+    <section class="cards-section">
+        <!-- الكروت تظل كما هي -->
+        <div class="card card-blue">
+            <div class="card-header">
+                <i class="fa-solid fa-water"></i>
+                <h3 id="card1Title">صفحة الحجز</h3>
+                <div class="date-badge">17</div>
+            </div>
+            <p id="card1Desc">خطوات بسيطة تفصلك عن رحلتك، تأكد من إدخال بياناتك بدقة لتصلك تذكرة الحجز عبر البريد الإلكتروني.</p>
+        </div>
+        <div class="card card-green">
+      <div class="card-header">
+        <i class="fa-solid fa-house"></i>
+        <h3 id="card2Title">الصفحة الرئيسية</h3>
+      </div>
+      <p id="card2Desc">مرحباً بك في الفيوم! ابدأ رحلتك بالبحث عن وجهتك المفضلة استخدم شريط البحث السريع للوصول.</p>
+    </div>
+
+    <div class="card card-orange">
+      <div class="card-header">
+        <i class="fa-solid fa-utensils"></i>
+        <h3 id="card3Title">صفحة الفنادق والمطاعم</h3>
+      </div>
+      <p id="card3Desc"> أختر مكان إقامتك بعناية؛ نوفر لك قائمة بأفضل الفنادق والبيوت الريفية (Lodges) في الفيوم</p>
+    </div>
+
+    <div class="card card-teal">
+      <div class="card-header">
+        <i class="fa-solid fa-user-plus"></i>
+        <h3 id="card4Title">صفحة إنشاء حساب</h3>
+      </div>
+      <p id="card4Desc">أنشئ حسابك الآن لتحفظ معالمك المفضلة وتتابع حجوزاتك القادمة تفعيل الحساب يمنحك الأولوية في الحصول على عروض. </p>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <i class="fa-solid fa-phone"></i>
+        <h3 id="card5Title">صفحة التواصل (اتصل بنا)</h3>
+      </div>
+      <p id="card5Desc">هل تريك اسفسار نحن هنا للمساعدة عبر الشات المباشر أو أرقام الطوارئ الموضحة.</p>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <i class="fa-solid fa-camera"></i>
+        <h3 id="card6Title">صفحة المعالم السياحية</h3>
+      </div>
+      <p id="card6Desc">اكتشف كنوز الفيوم من محميات طبيعية وآثار، إضغط على اي معلم لمعرفة مواعيد الزيارة، أسعار التذاكر وأفضل وقت للتصوير.</p>
+    </div>
+
+    <div class="card card-indigo">
+      <div class="card-header">
+        <i class="fa-solid fa-id-card"></i>
+        <h3 id="card7Title">صفحة الملف الشخصي</h3>
+      </div>
+      <p id="card7Desc">للحالات الطارئة، استخدم أيقونة الواتساب للرد السريع من فريق الدعم</p>
+    </div>
+        <!-- ... باقي الكروت بنفس الطريقة ... -->
+    </section>
+
+    <footer class="footer">
+        <div class="emergency">
+            <span><i class="fa-solid fa-plus emergency-icon"></i> <span id="emergencyTitle">أرقام الطوارئ:</span></span>
+            <span class="num"><span id="touristPolice">شرطة السياحة</span> <strong>126</strong></span>
+            <span class="num"><span id="ambulance">الإسعاف</span> <strong>123</strong></span>
+        </div>
+        <p id="footerCopyright">© 2026 Fayoum Eco Tours - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <!-- تعديل مسار الـ JS -->
+    <script src="{% static 'guidelines.js' %}"></script>
+</body>
+</html>

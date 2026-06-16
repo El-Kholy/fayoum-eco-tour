@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">احجز رحلتك - الفيوم</title>
+    <link rel="stylesheet" href="{% static 'reservation.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1 id="title">احجز رحلتك الى الفيوم</h1>
+        <p class="subtitle" id="subtitle">املأ بياناتك لتجربة حجز مريحة</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- بيانات الزائر -->
+            <div class="section">
+                <h3 id="step1">بيانات المسافر</h3>
+                <div class="grid">
+                    <input type="text" name="fName" id="fName" placeholder="الاسم الأول" required>
+                    <input type="text" name="lName" id="lName" placeholder="اسم العائلة" required>
+                    <input type="text" name="nationality" id="nationality" placeholder="الجنسية">
+                    <input type="tel" name="phone" id="phone" placeholder="رقم الهاتف" required>
+                    <input type="email" name="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <input type="text" name="address" id="address" placeholder="العنوان">
+                </div>
+                <button class="btn" id="addTraveler"></button>
+            </div>
+
+            <!-- الحجز -->
+            <div class="booking-section">
+                <h2 class="main-title" id="step2">تفاصيل الحجز</h2>
+                <div class="booking-container">
+                    <div class="booking-box">
+    <div class="box-header" id="hotelTitle">حجز فندق</div>
+    <div class="box-content">
+
+        <input type="hidden" name="room_id" value="{{ rooms.0.id }}">
+
+        <input type="number" name="hotelPersons" id="hotelPersons" placeholder="عدد الأفراد">
+
+        <input type="date" name="check_in" id="hotelStart">
+
+        <input type="date" name="check_out" id="hotelEnd">
+
+    </div>
+</div>
+                    <div class="booking-box">
+                        <div class="box-header" id="tripTitle">حجز رحلة</div>
+                        <div class="box-content">
+                            <input type="number" name="tripPersons"id=tripPersons placeholder="عدد الأفراد">
+                            <input type="date" name="tripStart"id=tripStart>
+                            <input type="date" name="tripEnd"id=tripEnd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الدفع البنكي -->
+            <div class="section">
+                <h2 class="title" id="step3">طريقة الدفع</h2>
+                <div class="card">
+                    <div class="card-header" id="bankTransfer">تحويل بنكي</div>
+                    <div class="grand">
+                        <input name="bankName"id=bankName placeholder="اسم البنك">
+                        <input name="accountName"id=accountName placeholder="اسم صاحب الحساب">
+                        <input name="accountNumber"id=accountNumber placeholder="رقم الحساب">
+                        <input name="iban"id=iban placeholder="IBAN">
+                        <input name="swift"id=swift placeholder="SWIFT">
+                        <input name="currency"id=currency placeholder="CURRENCY">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- فيزا -->
+            <div class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <span id="visaText">بطاقة ائتمان</span>
+                        <span class="visa-logo">VISA</span>
+                    </div>
+                    <div class="grid">
+                    <input name="cardName" id="cardName" placeholder="الاسم حامل البطاقة">
+                    <input name="cardNumber" id="cardNumber" placeholder="رقم البطاقة">
+                    <input name="expiry" id="expiry" placeholder="تاريخ الانتهاء">
+                    <input name="country" id="country" placeholder="دولة الإصدار">
+                    <input name="cvv" id="CVV" placeholder="CVV">
+                    
+                </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit" id="submitBtn">تأكيد الحجز النهائي</button>
+        </form>
+    </div>
+
+    <script src="{% static 'Reservatin.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المعبد الجنوبي - Fayoum Eco Tours</title>
+  <link rel="stylesheet" href="{% static 'lahon.css' %}?v=5">
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+     <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Fayoum Eco Tour</title>
+  
+ <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li data-lang="ar"><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li data-lang="ar"><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li data-lang="ar"><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li data-lang="ar"><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li data-lang="ar"><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li data-lang="ar"><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li data-lang="ar"><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li data-lang="ar"><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+    </ul>
+    <div class="lang">
+      <button onclick="changeLang('ar')">AR</button>
+      <span>|</span>
+      <button onclick="changeLang('en')">EN</button>
+    </div>
+    <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-image-placeholder">
+      <img src="{% static 'data/777777777.JPG' %}"alt="صورة المعبد الجنوبي" />
+    </div>
+    <div class="hero-text">
+      <h1 class="place-title">المعبد الجنوبي</h1>
+      <p class="place-subtitle">حكايةٌ نُقشت بحجر الصوان، تروي عظمة الأجداد في كل زاوية</p>
+    </div>
+  </section>
+
+  <!-- INFO TABS -->
+  <section class="info-tabs">
+
+    <div class="tab-card" id="tab-time">
+      <i class="fa-regular fa-clock tab-icon"></i>
+      <span class="tab-label">أفضل وقت</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-sun"></i> أفضل وقت للزيارة</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>أكتوبر – مارس:</strong> طقس معتدل ومثالي لاستكشاف الأطلال</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>الصباح الباكر (8 – 11 ص):</strong> إضاءة طبيعية رائعة لتصوير النقوش</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>قبيل الغروب:</strong> ألوان ذهبية تُحيي تفاصيل الحجر الجيري</li>
+          <li><i class="fa-solid fa-triangle-exclamation"></i> تجنب يونيو – أغسطس بسبب الحرارة الشديدة</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-distance">
+      <i class="fa-solid fa-car tab-icon"></i>
+      <span class="tab-label">المسافة</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-route"></i> المسافة من مطار القاهرة</h3>
+        <ul>
+          <li><i class="fa-solid fa-plane-arrival"></i> المطار ← المعبد الجنوبي: <strong>~105 كم</strong></li>
+          <li><i class="fa-solid fa-car"></i> بالسيارة: ~<strong>1.5 ساعة</strong> عبر طريق الفيوم الصحراوي</li>
+          <li><i class="fa-solid fa-bus"></i> بالأتوبيس: ~<strong>2 ساعة</strong> من محطة الجيزة ثم سرفيس</li>
+          <li><i class="fa-solid fa-location-dot"></i> الموقع: منطقة كرانيس (كوم أوشيم)، الفيوم</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-entry">
+      <i class="fa-solid fa-ticket tab-icon"></i>
+      <span class="tab-label">الدخول</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-door-open"></i> تذاكر الدخول</h3>
+        <ul>
+          <li><i class="fa-solid fa-tag"></i> المصريون: <strong>30 جنيه</strong> | الأجانب: <strong>150 جنيه</strong></li>
+          <li><i class="fa-solid fa-tag"></i> الطلاب المصريون: <strong>15 جنيه</strong> | الطلاب الأجانب: <strong>75 جنيه</strong></li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>مسموح:</strong> الكاميرات، التصوير، المياه</li>
+          <li><i class="fa-solid fa-ban"></i> <strong>ممنوع:</strong> لمس النقوش، التصوير بفلاش، التدخين، الأكل داخل المعبد</li>
+          <li><i class="fa-solid fa-clock"></i> مواعيد الفتح: 9 ص – 4 م يوميًا</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-rating">
+      <i class="fa-solid fa-star tab-icon"></i>
+      <span class="tab-label">التقييم</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-star"></i> قيّم المعبد الجنوبي</h3>
+        <div class="stars-input">
+          <span class="star" data-val="1">&#9733;</span>
+          <span class="star" data-val="2">&#9733;</span>
+          <span class="star" data-val="3">&#9733;</span>
+          <span class="star" data-val="4">&#9733;</span>
+          <span class="star" data-val="5">&#9733;</span>
+        </div>
+        <p class="rating-msg" id="rating-msg">اختر عدد النجوم</p>
+        <textarea id="rating-comment" placeholder="شارك تجربتك مع الآخرين..."></textarea>
+        <button class="submit-rating" id="submit-rating">إرسال التقييم</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-card">
+      <h2 class="section-title">عن المكان</h2>
+      <p>
+        المعبد الجنوبي بمدينة كرانيس الأثرية (كوم أوشيم) بالفيوم هو معبد روماني مشيد من
+        الحجر الجيري في القرن الأول الميلادي (عهد الإمبراطور نيرون) لعبادة الإلهين
+        التمساحين "بنيفيروس" و"بيتسوشوس". يتميز بوجود صرح بيتقدمه، حوض لتربية
+        التماسيح أمامه، قدس أقداس، ومنازل لكهنة المعبد في محيطه، ويُعد من أهم
+        المعالم الدينية لمدينة كرانيس اليونانية الرومانية.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY SLIDER -->
+  <section class="gallery-section">
+    <h2 class="section-title" id="galleryTitle">معرض الصور</h2>
+    <div class="slider-wrapper">
+      <button class="slider-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="slider-track" id="sliderTrack">
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide"> <img src="{% static 'data/33_ganoby.JPG' %}"alt="صورة 1" /></div>
+            <div class="slide"> <img src="{% static 'data/2025_11_28_09_32_IMG_1262.JPG' %}"alt="صورة 2" /></div>
+            <div class="slide"> <img src="{% static 'data/0000.JPG' %}"alt="صورة 3" /></div>
+            <div class="slide"> <img src="{% static 'data/180.JPG' %}"alt="صورة 4" /></div>
+            <div class="slide"> <img src="{% static 'data/11_ganoby.JPG' %}"alt="صورة 5" /></div>
+        </div>
+      </div>
+      <button class="slider-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-left"></i></button>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+
+  <!-- BOOK & MAP SECTION -->
+  <section class="book-map-section">
+
+    <!-- يمين: الخريطة -->
+    <div class="side-card map-card">
+      <h3 class="side-title" id="mapTitle">موقعنا على الخريطة</h3>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3469.5!2d30.8983!3d29.5283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDMxJzQyLjAiTiAzMMKwNTMnNTQuMCJF!5e0!3m2!1sar!2seg!4v1234567890"
+          width="100%" height="100%"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="موقع المعبد الجنوبي">
+        </iframe>
+      </div>
+      <a href="https://maps.google.com/?q=Southern+Temple+Karanis+Kom+Oshim+Fayoum"
+         target="_blank" class="map-open-btn">
+        <i class="fa-solid fa-location-arrow"></i>
+        <span id="mapOpenBtnText">افتح في خرائط جوجل</span>
+      </a>
+    </div>
+
+    <!-- يسار: الحجز -->
+    <div class="side-card book-card">
+      <div class="book-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <h3 class="side-title" id="bookTitle">احجز زيارتك الآن</h3>
+      <p class="book-sub" id="bookSub">تجربة أثرية لا تُنسى في قلب كرانيس</p>
+      <ul class="book-features" id="bookFeatures">
+        <li><i class="fa-solid fa-circle-check"></i><span>جولة مع مرشد متخصص</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>استكشاف النقوش الأثرية</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>تصوير في أجمل المواقع</span></li>
+      </ul>
+      <a href="{% url 'reservation' %}" class="book-btn" id="bookBtn">
+        <i class="fa-solid fa-arrow-left" id="bookArrow"></i>
+        <span id="bookBtnText" >احجز الآن</span>
+      </a>
+    </div>
+
+
+  
+
+
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="footerText">جميع الحقوق محفوظة - Fayoum Eco Tours &copy; 2026</p>
+  </footer>
+
+  <script src="{% static 'ganoby.js' %}?v=20"></script>
+</body>
+</html>
+
+
+
+

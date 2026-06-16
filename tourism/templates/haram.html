@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-ar="فندق الاهرام" data-en="Pyramids Hotel">فندق الاهرام</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'haram.css' %}">
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+  <meta charset="UTF-8">
+  <title>Fayoum Eco Tour</title>
+  
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+   <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" data-ar="الصفحة الرئيسية"
+              data-en="Home">
+              الصفحة الرئيسية>الصفحة الرئيسية</a>
+            </li>
+            <li><a href="{% url 'restaurants' %}"   data-ar="المطاعم"
+              data-en="Restaurants">
+              المطاعم>المطاعم</a>
+            </li>
+            <li><a href="{% url 'landmarks' %}"   data-ar="المعالم"
+              data-en="Attractions">
+              المعالم>المعالم</a>
+            </li>
+            <li><a href="{% url 'hotel' %}"   data-ar="الفنادق"
+                data-en="Hotels">
+                الفنادق>الفنادق</a>
+            </li>
+            <li><a href="{% url 'reservation' %}"   data-ar="الحجوزات"
+              data-en="Bookings">
+              الحجوزات>الحجوزات</a>
+            </li>
+            <li><a href="{% url 'guidelines' %}"   data-ar="الإرشادات"
+              data-en="Guides">
+              الإرشادات>الإرشادات</a>
+            </li>
+            <li><a href="{% url 'about' %}"   data-ar="من نحن"
+              data-en="About Us">
+              من نحن>من نحن</a>
+            </li>
+            <li><a href="{% url 'contact' %}"   data-ar="تواصل معنا"
+              data-en="Contact Us">
+              تواصل معنا>تواصل معنا</a>
+            </li>
+        </ul>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+
+  <!-- Hotel Header -->
+  <section class="bg-emerald-50 py-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Main Image -->
+        <div class="lg:col-span-8">
+          <div class="h-[350px] bg-cover bg-center"
+            style="background-image: url('/static/data/haram.JPG');">
+          </div>
+          <div class="mt-4 text-center">
+            <button class="bg-emerald-700 text-white px-10 py-3.5 rounded-2xl font-medium text-lg"
+                    data-ar="فندق الاهرام"
+                    data-en="Pyramids Hotel">
+              فندق الاهرام
+            </button>
+          </div>
+        </div>
+
+        <!-- Side Info -->
+        <div class="lg:col-span-4">
+          <div class="bg-emerald-700 text-white rounded-3xl p-8 h-full">
+            <div class="space-y-8">
+
+              <div class="flex items-center gap-4">
+                <i class="fas fa-map-marker-alt text-3xl"></i>
+                <div>
+                  <p class="text-sm opacity-75" data-ar="الموقع" data-en="Location">الموقع</p>
+                  <p class="font-medium" data-ar="قرية تونس - الفيوم" data-en="Tunis Village - Fayoum">قرية تونس - الفيوم</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <i class="fas fa-star text-3xl"></i>
+                <div>
+                  <p class="text-sm opacity-75" data-ar="النجوم" data-en="Stars">النجوم</p>
+                  <p class="font-medium">4.5 ★★★★☆</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <i class="fas fa-comment-dots text-3xl"></i>
+                <div>
+                  <p class="text-sm opacity-75" data-ar="التقييم" data-en="Rating">التقييم</p>
+                  <p class="font-medium">4.8 / 5</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <i class="fas fa-tag text-3xl"></i>
+                <div>
+                  <p class="text-sm opacity-75" data-ar="السعر" data-en="Price">السعر</p>
+                  <p class="font-medium"
+                     data-ar="من 1200 جنيه / ليلة"
+                     data-en="From 1200 EGP / night">
+                    من 1200 جنيه / ليلة
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 py-12 space-y-16">
+
+    <!-- صور الغرف -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-emerald-900 mb-8"
+          data-ar="صور الغرف"
+          data-en="Rooms Photos">
+        صور الغرف
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/غرف (1).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/غرف (2).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/غرف (3).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/غرف (4).JPG');">
+        </div>
+
+       </div>
+    </section>
+
+    <!-- صور الريسبشن -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-emerald-900 mb-8"
+          data-ar="صور الريسبشن"
+          data-en="Reception Photos">
+        صور الريسبشن
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/ريسبشن (1).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/ريسبشن (2).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/ريسبشن (3).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/ريسبشن (4).JPG');">
+        </div>
+      </div>
+    </section>
+
+    <!-- صور المطعم -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-emerald-900 mb-8"
+          data-ar="صور المطعم"
+          data-en="Restaurant Photos">
+        صور المطعم
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/مطعم (1).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/مطعم (2).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/مطعم (3).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/مطعم (4).JPG');">
+        </div>
+      </div>
+    </section>
+
+    <!-- صور حمام السباحة -->
+    <section>
+      <h2 class="text-3xl font-bold text-center text-emerald-900 mb-8"
+          data-ar="صور حمام السباحة"
+          data-en="Pool Photos">
+        صور حمام السباحة
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/حمام سباحة (1).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/حمام سباحة (2).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/حمام سباحة (3).JPG');">
+        </div>
+
+        <div class="h-64 bg-cover bg-center"
+            style="background-image: url('/static/data/حمام سباحة (4).JPG');">
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Booking -->
+  <div class="bg-emerald-700 py-16 text-white text-center">
+    <div class="max-w-3xl mx-auto px-4">
+
+      <h2 class="text-3xl font-bold mb-6"
+          data-ar="احجز إقامتك الآن واستمتع بتجربة لا تُنسى"
+          data-en="Book your stay now and enjoy an unforgettable experience">
+        احجز إقامتك الآن واستمتع بتجربة لا تُنسى
+      </h2>
+
+      <a href="{% url 'reservation' %}">
+        <button class="bg-white text-emerald-700 hover:bg-emerald-50 px-16 py-5 rounded-2xl text-xl font-medium transition"
+                data-ar="احجز الآن"
+                data-en="Book Now">
+          احجز الآن
+        </button>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- LANGUAGE SCRIPT -->
+  <script>
+    function changeLang(lang) {
+
+      localStorage.setItem("lang", lang);
+
+      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-ar]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang") || "ar";
+      changeLang(savedLang);
+    });
+  </script>
+
+</body>
+</html>

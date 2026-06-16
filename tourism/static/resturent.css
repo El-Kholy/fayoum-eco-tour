@@ -1,0 +1,207 @@
+body { 
+  font-family: 'Segoe UI', system-ui, sans-serif; 
+}
+
+/* HERO */
+.hero-bg {
+  background: linear-gradient(to bottom, #8cb89c, #d4e6d8);
+}
+
+/* CARDS */
+.restaurant-card {
+  transition: all 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+              0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* NAVBAR */
+
+
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  direction: rtl;
+  gap: 16px;
+}
+.logo {
+  width: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  font-weight: 600;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: teal;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang button:hover {
+  background: rgba(0, 128, 128, 0.15);
+}
+
+a:hover {
+  color: blue;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .restaurant-card {
+    transform: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .hero-bg h2 {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+
+  .restaurant-card {
+    margin: auto;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .hero-bg {
+    padding: 40px 10px;
+  }
+
+  .nav-links {
+    font-size: 14px;
+  }
+
+  .lang button {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+
+
+/* =============================================
+   أضف الكود ده في آخر ملف styles.css
+   ============================================= */
+
+/* NAVBAR FIX */
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  direction: rtl;
+  gap: 16px;
+}
+
+.logo { width: 70px; flex-shrink: 0; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0 auto;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-links li { font-weight: 600; }
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang button {
+  padding: 5px 12px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  background: rgba(26,122,94,0.1);
+  color: teal;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang button:hover { background: teal; color: #fff; }
+
+/* PROFILE ICON */
+.profile { flex-shrink: 0; }
+
+.profile a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.profile a:hover { background: #006666; transform: scale(1.1); }
+
+/* ── English navbar ── */
+html[lang="en"] .navbar { direction: ltr; }
+html[lang="en"] .nav-links { margin: 0 auto; flex-direction: row; }
+html[lang="en"] .lang { margin-left: 12px; margin-right: 0; }

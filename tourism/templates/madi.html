@@ -1,0 +1,227 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="author" content="Fayoum Eco Tours Development Team">
+    <meta name="keywords"content="الفيوم, سياحة الفيوم, معالم الفيوم, أماكن سياحية في الفيوم, زيارة الفيوم, رحلات الفيوم, السياحة في مصر, السياحة البيئية الفيوم, Fayoum, Fayoum tourism, Fayoum attractions, Wadi El Rayan, وادي الريان, بحيرة قارون, Lake Qarun, جبل المدورة, جبل قطراني, قصر قارون, معبد قصر قارون, هرم هوارة, مدينة ماضي, السياحة في الفيوم, فنادق الفيوم, مطاعم الفيوم, أماكن الإقامة في الفيوم, رحلات يومية الفيوم, safari Fayoum, desert safari Egypt, Egypt tourism, travel Egypt, eco tours Egypt">
+
+  <title>مدينة ماضي - Fayoum Eco Tours</title>
+   <link rel="stylesheet" href="{% static 'madi.css' %}?v=5">
+   <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+  <meta charset="UTF-8">
+  <title>Fayoum Eco Tour</title>
+ <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+ <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-image-placeholder">
+      <img src="{% static 'data/2025_11_29_14_16_IMG_1922.jpg' %}"alt="صورة مدينة ماضي" />
+      </div>
+    <div class="hero-text">
+      <h1 class="place-title">مدينة ماضي</h1>
+      <p class="place-subtitle">تضم المعبد الوحيد المتبقي من الدولة الوسطى</p>
+    </div>
+  </section>
+
+  <!-- INFO TABS -->
+  <section class="info-tabs">
+
+    <!-- Best Time -->
+    <div class="tab-card" id="tab-time">
+      <i class="fa-regular fa-clock tab-icon"></i>
+      <span class="tab-label">أفضل وقت</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-sun"></i> أفضل وقت للزيارة</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>8 صباحاً – 11 صباحاً:</strong> هدوء تام وإضاءة ذهبية على
+            الأطلال</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>نوفمبر – مارس:</strong> طقس بارد ومعتدل مثالي للتجوال في
+            الموقع المفتوح</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>أيام الأسبوع:</strong> أقل ازدحاماً من عطلات نهاية
+            الأسبوع</li>
+          <li><i class="fa-solid fa-triangle-exclamation"></i> تجنّب فصل الصيف بسبب الحرارة الشديدة في الموقع المكشوف
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Distance -->
+    <div class="tab-card" id="tab-distance">
+      <i class="fa-solid fa-car tab-icon"></i>
+      <span class="tab-label">المسافة</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-route"></i> المسافة من مطار القاهرة</h3>
+        <ul>
+          <li><i class="fa-solid fa-plane-arrival"></i> المطار ← مدينة ماضي: <strong>~130 كم</strong></li>
+          <li><i class="fa-solid fa-car"></i> بالسيارة: ~<strong>1.5 ساعة</strong> عبر طريق الفيوم الصحراوي</li>
+          <li><i class="fa-solid fa-bus"></i> بالأتوبيس: ~<strong>2.5 ساعة</strong> من محطة الجيزة ثم سرفيس</li>
+          <li><i class="fa-solid fa-location-dot"></i> الموقع: جنوب شرق الفيوم، بالقرب من قرية ماضي</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Entry -->
+    <div class="tab-card" id="tab-entry">
+      <i class="fa-solid fa-ticket tab-icon"></i>
+      <span class="tab-label">الدخول</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-door-open"></i> تذاكر الدخول</h3>
+        <ul>
+          <li><i class="fa-solid fa-tag"></i> المصريون: <strong>20 جنيه</strong></li>
+          <li><i class="fa-solid fa-tag"></i> الأجانب: <strong>100 جنيه</strong></li>
+          <li><i class="fa-solid fa-graduation-cap"></i> الطلاب: خصم 50%</li>
+          <li><i class="fa-solid fa-child"></i> أقل من 6 سنوات: مجاناً</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>مسموح:</strong> التصوير الشخصي، زجاجة ماء، قبعة وواقي شمس
+          </li>
+          <li><i class="fa-solid fa-ban"></i> <strong>ممنوع:</strong> لمس الحجارة الأثرية، الطائرات المسيّرة، الحيوانات
+            الأليفة، التخييم بدون تصريح</li>
+          <li><i class="fa-solid fa-clock"></i> مواعيد الفتح: من شروق الشمس حتى الغروب</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="tab-card" id="tab-rating">
+      <i class="fa-solid fa-star tab-icon"></i>
+      <span class="tab-label">التقييم</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-star"></i> قيّم مدينة ماضي</h3>
+        <div class="stars-input">
+          <span class="star" data-val="1">&#9733;</span>
+          <span class="star" data-val="2">&#9733;</span>
+          <span class="star" data-val="3">&#9733;</span>
+          <span class="star" data-val="4">&#9733;</span>
+          <span class="star" data-val="5">&#9733;</span>
+        </div>
+        <p class="rating-msg" id="rating-msg">اختر عدد النجوم</p>
+        <textarea id="rating-comment" placeholder="شارك تجربتك مع الآخرين..."></textarea>
+        <button class="submit-rating" id="submit-rating">إرسال التقييم</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-card">
+      <h2 class="section-title">عن المكان</h2>
+      <p>
+        موقع أثري يجمع بين عراقة الدولة الوسطى واللمسات اليونانية الرومانية، حيث تضم
+        المعبد الوحيد المتبقي من عصر الأسرة الـ12. تتميز المدينة بطريق الكباش الفريد الذي
+        يربط بين معابدها، وتصاميمها المعمارية التي تروي قصص التجارة والحياة الدينية
+        القديمة. تُعد "ماضي" وجهة مثالية لمن يبحث عن الهدوء واستكشاف الآثار البعيدة
+        عن التجمعات السياحية التقليدية.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY SLIDER -->
+  <section class="gallery-section">
+    <h2 class="section-title">معرض الصور</h2>
+    <div class="slider-wrapper">
+      <button class="slider-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide"> <img src="{% static 'data/1111.JPG' %}"alt="صورة 1" /></div>
+        <div class="slide"> <img src="{% static 'data/2025_11_29_15_01_IMG_2013.JPG' %}"alt="صورة 2" /></div>
+        <div class="slide"> <img src="{% static 'data/14.JPG' %}"alt="صورة 3" /></div>
+        <div class="slide"> <img src="{% static 'data/77.JPG' %}"alt="صورة 4" /></div>
+        <div class="slide"> <img src="{% static 'data/madi.JPG' %}"alt="صورة 5" /></div>
+       </div>
+      <button class="slider-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-left"></i></button>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+  
+  <section class="book-map-section">
+
+    <!-- يمين: الخريطة -->
+  <div class="side-card map-card">
+    <h3 class="side-title" id="mapTitle">موقع مدينة ماضي على الخريطة</h3>
+
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=29.1928,30.6423&z=15&output=embed"
+        width="100%" height="100%"
+        style="border:0;" allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="مدينة ماضي - الفيوم">
+      </iframe>
+    </div>
+
+    <a href="https://maps.google.com/?q=29.1928,30.6423"
+       target="_blank" class="map-open-btn">
+
+      <i class="fa-solid fa-location-arrow"></i>
+      <span id="mapOpenBtnText">افتح في خرائط جوجل</span>
+    </a>
+  </div>
+
+    <div class="side-card book-card">
+      <div class="book-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <h3 class="side-title" id="bookTitle">احجز زيارتك الآن</h3>
+      <p class="book-sub" id="bookSub">رحلة عبر الزمن في أعرق شبكة ري في التاريخ</p>
+      <ul class="book-features" id="bookFeatures">
+        <li><i class="fa-solid fa-circle-check"></i><span>جولة مع مرشد متخصص</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>مشاهدة الواوا الخشبية التاريخية</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>تصوير بين القنوات والحقول</span></li>
+      </ul>
+      
+      <a href="{% url 'reservation' %}" class="book-btn" id="bookBtn">
+        <i class="fa-solid fa-arrow-left" id="bookArrow"></i>
+        <span id="bookBtnText" >احجز الآن</span>
+      </a>
+    </div>
+   
+  </section>
+
+  <!-- FOOTER -->
+   <footer class="footer">
+    <p id="footerText">جميع الحقوق محفوظة - Fayoum Eco Tours &copy; 2026</p>
+  </footer>
+
+  <script src="{% static 'madi.js' %}?v=20"></script>
+</body>
+
+</html>
+

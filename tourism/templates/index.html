@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fayoum Eco Tours Development Team">
+    <title>Fayoum Eco Tour</title>
+    <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">
+                    <img src="{% static 'data/final.logo.png' %}" alt="logo">
+                </div>
+                <div class="lang">
+                    <button onclick="changeLang('ar')">AR</button>
+                    <span>|</span>
+                    <button onclick="changeLang('en')">EN</button>
+                </div>
+                <ul class="nav-links">
+                    <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+                    <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+                    <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+                    <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+                    <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+
+                    <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+                    <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+                    <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="{% url 'profile' %}">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+
+                    {% if request.session.user_id %}
+                    <!-- لو المستخدم مسجل دخول -->
+                    <a href="{% url 'reservation' %}" 
+                    class="book-btn"
+                    data-ar="احجز الآن"
+                    data-en="Book Now"
+                    id="nav5">
+                        احجز الآن
+                    </a>
+                    {% else %}
+                    <!-- لو المستخدم مش مسجل -->
+                    <a href="{% url 'tarhibia' %}" 
+                    class="book-btn"
+                    data-ar="احجز الآن"
+                    data-en="Book Now"
+                    id="nav5">
+                        احجز الآن
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <div class="hero-content">
+
+            <h1 data-ar="اكتشف جمال الفيوم" data-en="Discover the beauty of Fayoum">
+                اكتشف جمال الفيوم
+            </h1>
+
+            <p data-ar="رحلة تنبض بالطبيعة، التاريخ والمغامرة"
+                data-en="A journey full of nature, history and adventure">
+                رحلة تنبض بالطبيعة، التاريخ والمغامرة
+            </p>
+
+        </div>
+        <div class="search-box">
+        
+        <form action="{% url 'search_logic' %}" method="GET" class="search-wrapper">
+            
+            <button type="submit" class="search-btn">
+                بحث
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <div class="search-item">
+                
+                <div class="input-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <select name="destination" id="placeFilter" required style="border:none; outline:none; font-family:'Cairo',sans-serif; font-size:15px; color:#888; width:100%; background:transparent; cursor:pointer;">
+                        <option value="">اختر المكان</option>
+                        <option value="بحيرة قارون">بحيرة قارون</option>
+                        <option value="قرية تونس">قرية تونس</option>
+                        <option value="هرم اللاهون">هرم اللاهون</option>
+                        <option value="وادي الريان">وادي الريان</option>
+                        <option value="وادي الحيتان">وادي الحيتان</option>
+                        <option value="جبل المدورة">جبل المدورة</option>
+                        <option value="مدينة ماضي">مدينة ماضي</option>
+                        <option value="هرم هوارة">هرم هوارة</option>
+                        <option value="معبد كرانيس">معبد كرانيس</option>
+                        <option value="متحف كوم اوشيم">متحف كوم اوشيم</option>
+                        <option value="المعبد الشمالي">المعبد الشمالي</option>
+                        <option value="المعبد الجنوبي">المعبد الجنوبي</option>
+                        <option value="السواقي">السواقي</option>
+                        <option value="البحيرة المسحورة">البحيرة المسحورة</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-item">
+                
+                <div class="input-box">
+                    <i class="fa-solid fa-calendar"></i>
+                    <input type="date" name="travel_date" id="visitDate" required style="border:none; outline:none; font-family:'Cairo',sans-serif; font-size:15px; color:#888; width:100%; background:transparent;">
+                </div>
+            </div>
+
+            <div class="search-item">
+                
+                <div class="input-box">
+                    <i class="fa-solid fa-users"></i>
+                    <input type="number" name="guests" id="peopleCount" min="1" placeholder="عدد الأشخاص" required style="border:none; outline:none; font-family:'Cairo',sans-serif; font-size:15px; color:#888; width:100%; background:transparent;">
+                </div>
+            </div>
+        </form>
+    </div>
+
+           </div>
+        </div>
+    </section>
+    <section class="categories container">
+
+        <div class="categories-grid">
+
+            <div class="category-card" onclick="window.location.href=`{% url 'landmarks' %}`"  style="cursor:pointer;">
+                <div class="category-text">
+                    <h3 data-ar="أماكن سياحية" data-en="Tourist Places">أماكن سياحية</h3>
+                    <p data-ar="اكتشف أكثر" data-en="Explore more">اكتشف أكثر</p>
+                </div>
+        <i class="fa-solid fa-map-location-dot"></i>     
+        
+        </div>
+
+        <div class="category-card" 
+            onclick="window.location.href=`{% url 'restaurants' %}`" 
+            style="cursor:pointer;">
+
+            <div class="category-text">
+                <h3 data-ar="مطاعم ومقاهي" data-en="Restaurants & Cafes">
+                    مطاعم ومقاهي
+                </h3>
+
+                <p data-ar="اكتشف أكثر" data-en="Explore more">
+                    اكتشف أكثر
+                </p>
+            </div>
+
+            <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <div class="category-card" onclick="window.location.href=`{% url 'hotel' %}`" style="cursor:pointer;">
+            <div class="category-text">
+                <h3 data-ar="إقامات وفنادق" data-en="Hotels & Stays">إقامات وفنادق</h3>
+                <p data-ar="اكتشف أكثر" data-en="Explore more">اكتشف أكثر</p>
+            </div>
+            <i class="fa-solid fa-hotel"></i>
+        </div>
+
+        <div class="category-card"
+            {% if request.session.user_id %}
+                onclick="window.location.href=`{% url 'reservation' %}`"
+            {% else %}
+                onclick="window.location.href=`{% url 'tarhibia' %}`"
+            {% endif %}
+             style="cursor:pointer;">
+            <div class="category-text">
+                <h3 data-ar="الحجز" data-en="Booking">الحجز</h3>
+                <p data-ar="احجز الآن" data-en="Book Now">احجز الآن</p>
+            </div>
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+      </div>
+
+    </section>
+    <section class="popular container">
+
+        <div class="section-header">
+
+            <a href="#" class="view-all" data-ar="عرض جميع الوجهات" data-en="View All">
+                عرض جميع الوجهات
+            </a>
+
+            <h2 data-ar="أشهر الوجهات" data-en="Popular Destinations">
+                أشهــر الوجهات
+            </h2>
+
+        </div>
+
+        <div class="cards">
+
+         <div class="card"
+            {% if request.session.user_id %}
+                onclick="window.location.href=`{% url 'qaroon' %}`"
+            {% else %}
+                onclick="window.location.href=`{% url 'tarhibia' %}`"
+            {% endif %}
+             style="cursor:pointer;">
+            <img src=" {% static 'data2/بحيرة قارون.png'%}" />
+            <div class="overlay"></div>
+            <div class="badge">مميز</div>
+            <div class="rating">⭐ 4.8</div>
+
+         <div class="card-content">
+             <h3 data-ar="بحيرة قارون" data-en="Lake Qarun">بحيرة قارون</h3>
+            <p data-ar="رحلة يوم كامل" data-en="Full day trip">رحلة يوم كامل</p>
+            <div class="price">EGP 650</div>
+      </div>
+    </div>
+
+
+
+         <div class="card"
+            {% if request.session.user_id %}
+                onclick="window.location.href=`{% url 'swaqy' %}`"
+            {% else %}
+                onclick="window.location.href=`{% url 'tarhibia' %}`"
+            {% endif %}
+            style="cursor:pointer;">
+            <img src="{% static 'data/esv7.JPG' %}" />
+                
+                  <div class="overlay"></div>
+                  <div class="badge">مميز</div>
+                  <div class="rating">⭐ 4.7</div>
+
+            <div class="card-content">
+                  <h3 data-ar="السواقي" data-en="Al Sawaqy">السواقي</h3>
+                 <p data-ar="رحلة يوم كامل" data-en="Full day trip">رحلة يوم كامل</p>
+             <div class="price">EGP 250</div>
+         </div>
+    </div>
+
+
+         <div class="card"
+            {% if request.session.user_id %}
+                onclick="window.location.href=`{% url 'rayan' %}`"
+            {% else %}
+                onclick="window.location.href=`{% url 'tarhibia' %}`"
+            {% endif %}
+             style="cursor:pointer;">
+            <img src=" {% static 'data2/شلالات وادي الريان.png'%}" />
+                <div class="overlay"></div>
+                <div class="badge">مميز</div>
+                <div class="rating">⭐ 4.6</div>
+
+                <div class="card-content">
+                    <h3 data-ar="شلالات الريان" data-en="Waterfalls">شلالات الريان</h3>
+                    <p data-ar="رحلة نصف يوم" data-en="Half day trip">رحلة نصف يوم</p>
+                    <div class="price">EGP 400</div>
+                </div>
+            </div>
+
+         <div class="card"
+            {% if request.session.user_id %}
+                onclick="window.location.href=`{% url 'tones' %}`"
+            {% else %}
+                onclick="window.location.href=`{% url 'tarhibia' %}`"
+            {% endif %}
+             style="cursor:pointer;">
+            <img src=" {% static 'data2/قرية تونس.JPG'%}" />
+                <div class="overlay"></div>
+                <div class="badge">مميز</div>
+                <div class="rating">⭐ 4.6</div>
+
+                <div class="card-content">
+                    <h3 data-ar="قرية تونس" data-en="Tunis Village">قرية تونس</h3>
+                    <p data-ar="رحلة يوم كامل" data-en="Full day trip">رحلة يوم كامل</p>
+                    <div class="price">EGP 500</div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="{% static 'index.js' %}?v=5"></script>
+
+</body>
+
+</html>

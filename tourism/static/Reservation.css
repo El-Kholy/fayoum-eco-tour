@@ -1,0 +1,452 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  direction: rtl;
+  background: #eee;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: blue;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li {
+  font-weight: 600;
+}
+
+/* LANGUAGE */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: teal;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang button:hover {
+  background: rgba(0, 128, 128, 0.15);
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  font-size: 20px;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 25px;
+  width: 100%;
+  border: #77777786 solid 1px;
+  padding: 15px;
+}
+
+.section h3 {
+  border-right: 5px solid #2e7d32;
+  padding-right: 10px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #e6d8c3;
+  text-align: right;
+}
+
+/* BUTTONS */
+.btn {
+  margin-top: 10px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+  padding: 15px;
+  font-size: 20px;
+  margin-right: 240px;
+}
+
+/* TRIP */
+.trip-type {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.trip-type button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #c8b89a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.trip-type .active {
+  background: #2e7d32;
+  color: #fff;
+}
+
+/* PAYMENT */
+.title {
+  text-align: right;
+  margin: 20px 0;
+  color: #666;
+}
+
+.card {
+  background: #ddd;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #999;
+  margin-top: 15px;
+}
+
+.card-header {
+  background: #1f7a3b;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* GRID PAYMENT */
+.grand {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* VISA */
+.visa-logo {
+  background: white;
+  color: #1f7a3b;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* العنوان */
+.main-title {
+  text-align: right;
+  margin: 20px;
+  color: #777;
+}
+
+/* الكونتينر الكبير */
+.booking-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* كل صندوق */
+.booking-box {
+  width: 50%;
+  background: #eee;
+}
+
+/* الهيدر الأخضر */
+.box-header {
+  background: #1f7a3b;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  border-left: 1px solid #ccc;
+}
+
+/* المحتوى */
+.box-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* الانبوت */
+.box-content input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #8b7d3a;
+  background: #d8c4ae;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* خط فاصل */
+.booking-box:first-child {
+  border-left: 1px solid #ccc;
+}
+
+/* SUBMIT */
+.submit {
+  width: 50%;
+  margin-top: 20px;
+  margin-right: 240p;
+  padding: 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 20px;
+
+}
+
+/* ========================= */
+/* تحسين الأزرار (بدل margin ثابت) */
+/* ========================= */
+
+.btn,
+.submit {
+  display: block;
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+}
+
+
+
+
+/* EXTRA TRAVELERS */
+#travelersContainer {
+  margin-top: 15px;
+}
+
+.extra-traveler {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px dashed #2e7d32;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.extra-traveler h4 {
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grand {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-container {
+    flex-direction: column;
+  }
+
+  .booking-box {
+    width: 100%;
+  }
+
+  .btn,
+  .submit {
+    width: 100%;
+    font-size: 16px;
+  }
+
+}
+
+/* ========================= */
+/* 📟 TABLET */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .container {
+    width: 95%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grand {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn,
+  .submit {
+    width: 70%;
+  }
+
+}
+
+
+
+
+/* =============================================
+   أضف الكود ده في آخر ملف styles.css
+   ============================================= */
+
+/* NAVBAR FIX */
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  direction: rtl;
+  gap: 16px;
+}
+
+.logo { width: 70px; flex-shrink: 0; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0 auto;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-links li { font-weight: 600; }
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang button {
+  padding: 5px 12px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  background: rgba(26,122,94,0.1);
+  color: teal;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang button:hover { background: teal; color: #fff; }
+
+/* PROFILE ICON */
+.profile { flex-shrink: 0; }
+
+.profile a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.profile a:hover { background: #006666; transform: scale(1.1); }
+
+/* ── English navbar ── */
+html[lang="en"] .navbar { direction: ltr; }
+html[lang="en"] .nav-links { margin: 0 auto; flex-direction: row; }
+html[lang="en"] .lang { margin-left: 12px; margin-right: 0; }

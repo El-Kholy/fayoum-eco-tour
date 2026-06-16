@@ -1,0 +1,337 @@
+/* =============================================
+   style.css — Fayoum Eco Tours
+   ============================================= */
+
+:root {
+  --green-dark:  #2d5a3d;
+  --green-mid:   #4a7c59;
+  --green-light: #7aab8a;
+  --gold:        #b8973a;
+  --cream:       #f0ece3;
+  --cream-light: #f7f4ef;
+  --text-dark:   #1a2e24;
+  --text-mid:    #3d5c4a;
+  --text-soft:   #6b8a76;
+  --white:       #ffffff;
+  --border:      #ddd8cc;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  direction: rtl;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; }
+/* NAVBAR */
+/* NAVBAR */
+
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+    width: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* شكل الزرار */
+.lang button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: teal;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* لما تحط الماوس */
+.lang button:hover {
+  background: rgba(0, 128, 128, 0.15);
+}
+
+/* الزرار اللي متفعل */
+.lang button.active {
+  background: teal;
+  color: white;
+}
+
+
+
+/* LTR overrides when English is active */
+[dir="ltr"] .navbar {
+  flex-direction: row-reverse;
+}
+
+[dir="ltr"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+[dir="ltr"] .hero-text {
+  text-align: left;
+}
+
+[dir="ltr"] .card-body {
+  text-align: left;
+}
+
+[dir="ltr"] .lang {
+  flex-direction: row-reverse;
+}
+
+
+
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #e8e0d0 0%, #d4ccbc 100%);
+    background-image: url('/static/data/landmarks.JPG');
+
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  gap: 20px;
+}
+
+.hero-badge {
+  background: var(--border);
+  color: var(--text-soft);
+  border: 1px solid #c8c0b0;
+  border-radius: 8px;
+  padding: 60px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.hero-text p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+}
+
+/* ===== SECTION TITLE ===== */
+.section-header {
+  text-align: center;
+  padding: 32px 20px 20px;
+}
+
+.section-header h2 {
+  display: inline-block;
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 36px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== GRID ===== */
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 20px 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 680px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; padding: 28px 20px; }
+  .nav-links { display: none; }
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.card-img {
+  background: var(--border);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* placeholder text over gray bg (fallback if image not loaded) */
+.card-img::before {
+  content: 'صورة';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  background: var(--border);
+  z-index: 0;
+}
+
+.card-img img { position: relative; z-index: 1; }
+
+.card-body {
+  padding: 14px 18px 18px;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  background: var(--green-mid);
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 28px;
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--green-dark);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--green-dark);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 0.82rem;
+}
+
+
+
+
+
+
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  direction: rtl;
+  gap: 16px;
+}
+
+.logo {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0 auto; /* دي أهم حاجة */
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-links a {
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* LANG */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* PROFILE */
+.profile a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.profile a:hover {
+  background: #006666;
+  transform: scale(1.1);
+}

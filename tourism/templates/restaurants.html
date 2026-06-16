@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أفضل مطاعم الفيوم</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="{% static 'resturent.css' %}"/>
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+  <meta charset="UTF-8">
+  <title>Fayoum Eco Tour</title>
+  
+  
+</head>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+   <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+<body>
+<header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg py-20 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 id="heroTitle" class="text-3xl md:text-5xl font-bold text-emerald-950 leading-tight">
+        دليلك لأفضل مطاعم الفيوم...<br>تجربة لاتنسى في قلب الطبيعة
+      </h2>
+      <button id="heroBtn" onclick="document.getElementById('restaurants').scrollIntoView({ behavior: 'smooth' })"
+        class="mt-12 bg-emerald-700 hover:bg-emerald-800 text-white text-lg font-medium px-12 py-5 rounded-full transition shadow-lg">
+        أبرز مطاعم الفيوم
+      </button>
+    </div>
+  </section>
+
+  <!-- Restaurants Section -->
+  <section id="restaurants" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 id="sectionTitle" class="text-4xl font-bold text-center text-emerald-900 mb-12">أبرز مطاعم الفيوم</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div><img src="{% static 'data/asawy.jpg' %}" alt="الفيوم" /></div>
+          <div class="p-6">
+            
+            <h3 id="r1name" class="text-2xl font-bold text-emerald-800">Al-Issawi</h3>
+            <p id="r1sub" class="text-emerald-700">(كبابجي صبري العيسوي)</p>
+            <p id="r1loc" class="text-sm text-gray-600 mt-4">منطقة الحديقة - قسم الفيوم<br><span class="font-medium">01005521254</span></p>
+            <p id="r1desc" class="text-sm text-gray-500 mt-3">مطعم مميز في المشويات والكباب والطرب</p>
+            <a id="r1btn" href="https://www.facebook.com/share/1B7g1HZykz/"
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>          
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div><img src="{% static 'data/khedawy.jpg' %}" alt="الفيوم" /></div>
+          <div class="p-6">
+            <h3 id="r2name" class="text-2xl font-bold text-emerald-800">Alkhedaiwy Restaurant</h3>
+            <p id="r2sub" class="text-emerald-700">(مطعم الخداوي)</p>
+            <p id="r2loc" class="text-sm text-gray-600 mt-4">شارع بطل السلام - قسم الفيوم<br><span class="font-medium">084637262</span></p>
+            <p id="r2desc" class="text-sm text-gray-500 mt-3">أشهر مطاعم الفيوم في الفراخ والوجبات السريعة</p>
+            <a id="r2btn" href="https://www.facebook.com/share/1GmZLS68go/" 
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>        
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-[370px] w-full"><img src="{% static 'data/ايبيس.jpg' %}" alt="الفيوم" class="w-full h-full object-cover shadow-inner"  /></div>
+          <div class="p-6">
+            <h3 id="r3name" class="text-2xl font-bold text-emerald-800">Ibis Restaurant & Cooking School</h3>
+            <p id="r3sub" class="text-emerald-700">(مطعم ومدرسة طبخ إيبس)</p>
+            <p id="r3loc" class="text-sm text-gray-600 mt-4">قرية تونس - الفيوم<br><span class="font-medium">1234 541 0100</span></p>
+            <p id="r3desc" class="text-sm text-gray-500 mt-3">وجهة فريدة تجمع بين الطعام والتعلم الطهي</p>
+            <a id="r3btn" href="https://www.facebook.com"  
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>        
+          </div>
+        </div>
+        <!-- Card 4 -->
+         <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="h-[400px] w-full"><img src="{% static 'data/اوزي.jpg' %}" alt="الفيوم" class="w-full h-full object-cover shadow-inner" /></div>
+          <div class="p-6">
+            <h3 id="r4name" class="text-2xl font-bold text-emerald-800">Ozzi Restaurant</h3>
+            <p id="r4sub" class="text-emerald-700">(مطعم أوزي)</p>
+            <p id="r4loc" class="text-sm text-gray-600 mt-4">شارع الخليفة المأمون - الفيوم<br><span class="font-medium">01013400040</span></p>
+            <p id="r4desc" class="text-sm text-gray-500 mt-3">مشهور بالمشويات والأكل الشرقي</p>
+            <a id="r4btn" href="https://www.facebook.com/share/1GCMrqFR9K/"  
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>        
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <div><img src="{% static 'data/كازوزا.jpg' %}" alt="الفيوم" /></div>
+          <div class="p-6">
+            <h3 id="r5name" class="text-2xl font-bold text-emerald-800">Kazozmix</h3>
+            <p id="r5sub" class="text-emerald-700">(كازوزا ميكس)</p>
+            <p id="r5loc" class="text-sm text-gray-600 mt-4">شارع الفاروق عمر - أمام البنك التجاري<br><span class="font-medium">01016166353</span></p>
+            <p id="r5desc" class="text-sm text-gray-500 mt-3">مطعم عصري يقدم ساندوتشات ووجبات سريعة</p>
+            <a id="r5btn" href="https://www.facebook.com/share/1EZYg9N237/" 
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>      
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="restaurant-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+        <div><img src="{% static 'data/بلو.png' %}" alt="الفيوم" /></div>
+          <div class="p-6">
+            <h3 id="r6name" class="text-2xl font-bold text-emerald-800">Blue Donkey</h3>
+            <p id="r6sub" class="text-emerald-700">(مطعم بلو دونكي)</p>
+            <p id="r6loc" class="text-sm text-gray-600 mt-4">قرية تونس - داخل فندق لازيب إن<br><span class="font-medium">0999 690 084</span></p>
+            <p id="r6desc" class="text-sm text-gray-500 mt-3">مطعم راقي بإطلالة جميلة</p>
+            <a id="r6btn" href="https://www.facebook.com" 
+              target="_blank" 
+              class="inline-block text-center mt-6 w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl font-medium transition">
+              تواصل
+            </a>          
+          </div>
+         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="{% static 'resturent.js' %}?v=5"></script>
+
+</body>
+</html>
+        

@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="author" content="Fayoum Eco Tours Development Team">
+    <meta name="keywords"content="الفيوم, سياحة الفيوم, معالم الفيوم, أماكن سياحية في الفيوم, زيارة الفيوم, رحلات الفيوم, السياحة في مصر, السياحة البيئية الفيوم, Fayoum, Fayoum tourism, Fayoum attractions, Wadi El Rayan, وادي الريان, بحيرة قارون, Lake Qarun, جبل المدورة, جبل قطراني, قصر قارون, معبد قصر قارون, هرم هوارة, مدينة ماضي, السياحة في الفيوم, فنادق الفيوم, مطاعم الفيوم, أماكن الإقامة في الفيوم, رحلات يومية الفيوم, safari Fayoum, desert safari Egypt, Egypt tourism, travel Egypt, eco tours Egypt">
+
+  <title>قرية تونس - Fayoum Eco Tours</title>
+  <link rel="stylesheet" href="{% static 'tones.css' %}?v=5">
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <head>
+  <meta charset="UTF-8">
+  <title>Fayoum Eco Tour</title>
+  
+   <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-image-placeholder">
+       <img src="{% static 'data/قرية تونس.jpg' %}"alt="صورة قرية تونس" />
+    </div>
+    <div class="hero-text">
+      <h1 class="place-title">قرية تونس</h1>
+      <p class="place-subtitle">مدرسة الخزف المفتوحة، وواحة المبدعين في قلب الريف المصري</p>
+    </div>
+  </section>
+
+  <!-- INFO TABS -->
+  <section class="info-tabs">
+
+    <div class="tab-card" id="tab-time">
+      <i class="fa-regular fa-clock tab-icon"></i>
+      <span class="tab-label">أفضل وقت</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-sun"></i> أفضل وقت للزيارة</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>10 صباحاً – 4 مساءً:</strong> ورش الخزف تكون مفتوحة
+            وحيوية</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>أكتوبر – أبريل:</strong> الطقس المعتدل مثالي للتجوال بين
+            أزقة القرية</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>الغروب على بحيرة قارون:</strong> مشهد لا يُنسى من شرفات
+            القرية</li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>عطلة نهاية الأسبوع:</strong> تجد معظم الفنانين والحرفيين
+            في ورشهم</li>
+          <li><i class="fa-solid fa-triangle-exclamation"></i> تجنّب أيام الجمعة — معظم الورش تكون مغلقة</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-distance">
+      <i class="fa-solid fa-car tab-icon"></i>
+      <span class="tab-label">المسافة</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-route"></i> المسافة من مطار القاهرة</h3>
+        <ul>
+          <li><i class="fa-solid fa-plane-arrival"></i> المطار ← قرية تونس: <strong>~130 كم</strong></li>
+          <li><i class="fa-solid fa-car"></i> بالسيارة: ~<strong>1.5 ساعة</strong> عبر طريق الفيوم الصحراوي</li>
+          <li><i class="fa-solid fa-bus"></i> بالأتوبيس: ~<strong>2.5 ساعة</strong> من محطة الجيزة ثم سرفيس</li>
+          <li><i class="fa-solid fa-location-dot"></i> الموقع: على ضفة بحيرة قارون، غرب الفيوم</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-entry">
+      <i class="fa-solid fa-ticket tab-icon"></i>
+      <span class="tab-label">الدخول</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-door-open"></i> تذاكر الدخول</h3>
+        <ul>
+          <li><i class="fa-solid fa-tag"></i> دخول القرية: <strong>مجاناً</strong></li>
+          <li><i class="fa-solid fa-tag"></i> ورش الخزف التفاعلية: <strong>تختلف حسب الورشة</strong></li>
+          <li><i class="fa-solid fa-tag"></i> دروس الفخار: تبدأ من <strong>100 جنيه</strong></li>
+          <li><i class="fa-solid fa-circle-check"></i> <strong>مسموح:</strong> التصوير، زيارة الورش، شراء المنتجات
+            اليدوية، الجلوس في المقاهي</li>
+          <li><i class="fa-solid fa-ban"></i> <strong>ممنوع:</strong> التصوير التجاري داخل الورش بدون إذن، إزعاج
+            الفنانين أثناء العمل</li>
+          <li><i class="fa-solid fa-clock"></i> مواعيد الورش: 10 صباحاً – 6 مساءً (السبت – الخميس)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-card" id="tab-rating">
+      <i class="fa-solid fa-star tab-icon"></i>
+      <span class="tab-label">التقييم</span>
+      <div class="tab-popup">
+        <h3><i class="fa-solid fa-star"></i> قيّم قرية تونس</h3>
+        <div class="stars-input">
+          <span class="star" data-val="1">&#9733;</span>
+          <span class="star" data-val="2">&#9733;</span>
+          <span class="star" data-val="3">&#9733;</span>
+          <span class="star" data-val="4">&#9733;</span>
+          <span class="star" data-val="5">&#9733;</span>
+        </div>
+        <p class="rating-msg" id="rating-msg">اختر عدد النجوم</p>
+        <textarea id="rating-comment" placeholder="شارك تجربتك مع الآخرين..."></textarea>
+        <button class="submit-rating" id="submit-rating">إرسال التقييم</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-card">
+      <h2 class="section-title">عن المكان</h2>
+      <p>
+        واحة الفن والجمال التي أسستها السويسرية "إيفيلين بوريه"، حيث تحولت من قرية
+        ريفية بسيطة إلى مركز عالمي لصناعة الخزف والفخار. تتميز القرية ببيوتها المبنية
+        من الطين على الطراز المعماري البيئي الفريد، وتوفر إطلالة ساحرة على بحيرة قارون
+        وسط مساحات خضراء شاسعة. تُعد المقصد الأول لمحبي الهدوء، الفنون اليدوية،
+        وتجربة الحياة الريفية الأصيلة بمذاق عصري وجذاب.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY SLIDER -->
+  <section class="gallery-section">
+    <h2 class="section-title">معرض الصور</h2>
+    <div class="slider-wrapper">
+      <button class="slider-btn prev-btn" id="prevBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide"> <img src="{% static 'data/11111.jpg' %}"alt="صورة 1" /></div>
+        <div class="slide"> <img src="{% static 'data/765.jpg' %}"alt="صورة 2" /></div>
+        <div class="slide"> <img src="{% static 'data/2026_02_10_21_42_13_IMG_3638.jpg' %}"alt="صورة 3" /></div>
+        <div class="slide"> <img src="{% static 'data/يبى.jpg' %}"alt="صورة 4" /></div>
+        <div class="slide"> <img src="{% static 'data/home1.jpg' %}"alt="صورة 4" /></div>
+       </div>
+      <button class="slider-btn next-btn" id="nextBtn"><i class="fa-solid fa-chevron-left"></i></button>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+
+  <section class="book-map-section">
+
+    <!-- يمين: الخريطة -->
+    <div class="side-card map-card">
+      <h3 class="side-title" id="mapTitle">موقعنا على الخريطة</h3>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13912.4284898516!2d30.4735237!3d29.3378546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14595daf3694f1e1%3A0x32c03ad0b7f6f530!2z2KrZiNmG2LMsINmC2KfYsdmI2YbYjCDZhdix2YPZsiDZitmI2LPZgSDYp9mE2LXYr9mK2YLYjCDZhdit2KfZgdi42Kkg2KfZhNmB2YrZiNmF!5e0!3m2!1sar!2seg!4v1715510000000"
+          width="100%" height="100%"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="موقع قرية تونس">
+        </iframe>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Tunis+Village+Fayoum"
+         target="_blank" class="map-open-btn">
+        <i class="fa-solid fa-location-arrow"></i>
+        <span id="mapOpenBtnText">افتح في خرائط جوجل</span>
+      </a>
+    </div>
+
+    <div class="side-card book-card">
+      <div class="book-icon"><i class="fa-solid fa-calendar-check"></i></div>
+      <h3 class="side-title" id="bookTitle">احجز زيارتك الآن</h3>
+      <p class="book-sub" id="bookSub">رحلة عبر الزمن في أعرق شبكة ري في التاريخ</p>
+      <ul class="book-features" id="bookFeatures">
+        <li><i class="fa-solid fa-circle-check"></i><span>جولة مع مرشد متخصص</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>مشاهدة الواوا الخشبية التاريخية</span></li>
+        <li><i class="fa-solid fa-circle-check"></i><span>تصوير بين القنوات والحقول</span></li>
+      </ul>
+      
+      <a href="{% url 'reservation' %}" class="book-btn" id="bookBtn">
+        <i class="fa-solid fa-arrow-left" id="bookArrow"></i>
+        <span id="bookBtnText" >احجز الآن</span>
+      </a>
+    </div>
+    
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>جميع الحقوق محفوظة - Fayoum Eco Tours &copy; 2026</p>
+  </footer>
+
+  <script src="{% static 'tones.js' %}?v=20"></script>
+</body>
+
+</html>

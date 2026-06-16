@@ -1,0 +1,348 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>معالم الفيوم السياحية</title>
+  <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+  <link rel="stylesheet" href="{% static 'landmarks.css' %}?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+<header class="navbar">
+        <img class="logo" src="{% static 'data/final.logo.png' %}" alt="logo">
+        <ul class="nav-links">
+            <!-- استخدام اسم الـ name المعرف في urls.py بدلاً من المسارات اليدوية -->
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+         <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+         <!-- PROFILE ICON -->
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+        
+        
+    </header>
+    <!-- header end -->
+
+ <section class="hero">
+        <div class="hero-text">
+            <h1 id="heroTitle">معالم ليست مجرد أماكن... بل تجارب تُخلَّد في الذاكرة</h1>
+            <p id="heroDesc">في كل زاوية من الفيوم سرٌّ ينتظر من يكتشفه</p>
+        </div>
+    </section>
+
+    <div class="section-header">
+        <h2>أبرز الوجهات السياحية</h2>
+    </div>
+
+    <main class="grid">
+
+        <article class="card">
+           <div class="card-img">
+      <!-- تأكدي أن مجلد editing موجود داخل مجلد static الأساسي -->
+      <img src="{% static 'editing/magic_lake/555.png' %}" alt="البحيرة المسحورة" />
+    </div>
+            <div class="card-body">
+                <h3 id="card1Title">بحيرة قارون</h3>
+                <p id="card1Desc">لوحة زرقاء خالدة في قلب الصحراء حيث تلتقي العراقة بهدوء الطبيعة</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'qaroon' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+                
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/11111.jpg' %}" alt="قرية تونس" />
+            </div>
+            <div class="card-body">
+                <h3 id="card2Title">قرية تونس</h3>
+                <p id="card2Desc">اكتشف سحر الفن الريفي وصناعة الفخار اليدوي</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'tones' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+                
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/111.jpg' %}" alt="هرم اللاهون" />
+            </div>
+            <div class="card-body">
+                <h3 id="card3Title">هرم اللاهون</h3>
+                <p id="card3Desc">الهندسة المصرية القديمة تتجلى في مدخل الهرم الفريد</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'lahon' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/88.png' %}" alt="وادي الريان" />
+            </div>
+            <div class="card-body">
+                <h3 id="card4Title">وادي الريان</h3>
+                <p id="card4Desc">الشلالات والبحيرات الساحرة في حضن المحمية الطبيعية</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'rayan' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/hetan.jpg' %}" alt="وادي الحيتان" />
+            </div>
+            <div class="card-body">
+                <h3 id="card5Title">وادي الحيتان</h3>
+                <p id="card5Desc">رحلة إلى أعماق المحيط القديم لاستكشاف أسرار تطور الحياة</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'hetan' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/11.jpg' %}" alt="جبل المدورة" />
+            </div>
+            <div class="card-body">
+                <h3 id="card6Title">جبل المدورة</h3>
+                <p id="card6Desc">إطلالة تخطف الأنفاس من فوق أجمل التكوينات الصخرية</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'modwara' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/2025_11_29_14_16_IMG_1922.jpg' %}" alt=" مدينة ماضي" />
+            </div>
+            <div class="card-body">
+          <h3 id="card7Title">مدينة ماضي</h3>
+          <p id="card7Desc">المدينة المفقودة التي تجمع بين آثار الدولة الوسطى واليونانية</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'madi' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+        </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/1111.jpg' %}" alt=" هرم هوارة" />
+            </div>
+           <div class="card-body">
+        <h3 id="card8Title">هرم هوارة</h3>
+        <p id="card8Desc">لغز المتاهة القديم ورمز لعظمة الدولة الوسطى في قلب الفيوم</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'hawara' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+      </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/2025_11_28_09_12_IMG_1190.jpg' %}" alt=" معبد كرانيس" />
+            </div>
+              <div class="card-body">
+            <h3 id="card9Title">معبد كرانيس</h3>
+            <p id="card9Desc">أطلال المدينة الرومانية العتيقة التي تروي تفاصيل الحياة اليومية</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'kranes' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+          </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/212.webp' %}" alt="متحف كوم أوشيم " />
+            </div>
+          <div class="card-body">
+            <h3 id="card10Title">متحف كوم أوشيم</h3>
+            <p id="card10Desc">نافذة على تاريخ الفيوم تضم كنوزاً تحكي قصص الحضارات</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'komo_shen' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+          </div>
+        </article>
+
+        <article class="card">
+            <div class="card-img">
+                <img src="{% static 'editing/magic_lake/2025_11_28_09_50_IMG_1304.jpg' %}" alt=" المعبد الشمالي" />
+            </div>
+            <div class="card-body">
+            <h3 id="card11Title">المعبد الشمالي</h3>
+            <p id="card11Desc">صمود الحجر في وجه الزمن وشاهد على أسرار الحضارات العتيقة</p>
+                <span>
+                    {% if request.session.user_id %}
+                        <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                        <a href="{% url 'shmaly' %}" class="btn">المزيد من التفاصيل</a>
+                    {% else %}
+                        <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                        <a href="{% url 'tarhibia' %}" class="btn">المزيد من التفاصيل</a>
+                    {% endif %}
+                </span>
+          </div>
+        </article>
+
+       <article class="card">
+        <div class="card-img">
+            <!-- تم إغلاق الـ div هنا فوراً بعد الصورة -->
+            <img src="{% static 'editing/magic_lake/2025_11_28_09_34_IMG_1270.jpg' %}" alt="المعبد الجنوبي" />
+        </div> 
+        
+        <div class="card-body">
+            <h3 id="card12Title">المعبد الجنوبي</h3>
+            <p id="card12Desc">تلتقي ترابيل الماضي بعظمة البناء في قلب المعبد الجنوبي</p>
+            <span>
+                {% if request.session.user_id %}
+                <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                    <a href="{% url 'ganoby' %}" class="btn">المزيد من التفاصيل</a>
+                    
+                      {% else %}
+                     <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                     <a href="{% url 'tarhibia' %}" class="btn"> 
+                        المزيد من التفاصيل
+                      </a>
+                       {% endif %}
+                </span>
+
+        </div>
+    </article>
+    <article class="card">
+        <div class="card-img">
+            <img src="{% static 'data/esv7.jpg' %}" alt="السواقي" />
+        </div>
+        <div class="card-body">
+            <h3>السواقي</h3>
+            <p>حيث يجري الماء فيحكي قصص الأجداد وسط أرض الفراعنة</p>
+             <span>
+                {% if request.session.user_id %}
+                <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                    <a href="{% url 'swaqy' %}" class="btn">المزيد من التفاصيل</a>
+                    
+                      {% else %}
+                     <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                     <a href="{% url 'tarhibia' %}" class="btn"> 
+                        المزيد من التفاصيل
+                      </a>
+                       {% endif %}
+                </span>
+        </div>
+        </article>
+
+        <article class="card">
+        <div class="card-img">
+            <img src="{% static 'data/elbohera.jpg' %}" alt="البحيرة المسحورة" />
+        </div>
+        <div class="card-body">
+            <h3>البحيرة المسحورة</h3>
+            <p>انعكاسات الماء الهادئ تروي أسرار حضارة عريقة</p>
+            <span>
+                {% if request.session.user_id %}
+                <!-- 1. إذا سجل دخوله: الرابط يوجهه لصفحة الفنادق -->
+                    <a href="{% url 'mash' %}" class="btn">المزيد من التفاصيل</a>
+                    
+                      {% else %}
+                     <!-- 2. إذا لم يسجل: الرابط يوجهه لصفحة تسجيل الدخول -->
+                     <a href="{% url 'tarhibia' %}" class="btn"> 
+                        المزيد من التفاصيل
+                      </a>
+                       {% endif %}
+                </span>
+        </div>
+     </article>
+
+    </main>
+
+    <footer>
+        <p>©2026 Fayoum Eco Tours — جميع الحقوق محفوظة</p>
+    </footer>
+    <script src="{% static 'landmarks.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* =========================================
+   RESPONSIVE - حط ده في آخر كل CSS
+   ========================================= */
+
+@media (max-width: 900px) {
+  .nav-links { gap: 16px; font-size: 0.88rem; }
+  .place-title, .pyramid-title { font-size: 2rem; }
+  .book-map-section { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  /* Navbar */
+  .nav-links { display: none; }
+  .navbar { flex-wrap: wrap; padding: 10px 14px; gap: 10px; }
+
+  /* Hero */
+  .hero { padding: 0 10px; margin-top: 16px; }
+  .hero-image-placeholder img { height: 240px; }
+  .place-title, .pyramid-title { font-size: 1.8rem; }
+  .place-subtitle { font-size: 0.9rem; }
+
+  /* Tabs */
+  .info-tabs { gap: 8px; padding: 0 10px; }
+  .tab-card { min-width: 70px; padding: 12px 8px; }
+  .tab-icon { font-size: 1.3rem; }
+  .tab-label { font-size: 0.78rem; }
+  .tab-popup { width: 260px; right: auto; left: 0; }
+
+  /* About */
+  .about-card { padding: 20px; }
+  .section-title { font-size: 1.3rem; }
+  .about-card p { font-size: 0.92rem; }
+
+  /* Slider */
+  .slide img { height: 220px; }
+  .slider-btn { width: 36px; height: 36px; font-size: 0.9rem; }
+
+  /* Book & Map */
+  .book-map-section { grid-template-columns: 1fr; gap: 14px; padding: 0 10px; }
+  .map-embed { min-height: 180px; }
+  .side-card { padding: 16px; }
+
+  /* Cards (الصفحة الرئيسية) */
+  .cards { flex-direction: column; padding: 20px; }
+  .card { width: 100%; }
+
+  /* Search */
+  .search-box { width: 95%; flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .place-title, .pyramid-title { font-size: 1.5rem; }
+  .hero-image-placeholder img { height: 180px; }
+  .tab-popup { width: 230px; }
+  .book-btn { font-size: 0.85rem; padding: 10px 14px; }
+  .map-open-btn { font-size: 0.82rem; }
+}

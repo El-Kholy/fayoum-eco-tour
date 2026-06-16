@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>من نحن | Fayoum Eco Tours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    
+    
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a class="link" href="{% url 'index' %}">
+            <h2>Fayoum Eco Tours</h2>
+        </a> 
+        
+    </header>
+
+    <main class="main-content page-content">
+        <div class="page-hero">
+            <h1 class="page-hero-title">من نحن 👤</h1>
+            <p class="page-hero-subtitle">
+                نحن فريق شغوف بالسفر والسياحة، قمنا بإنشاء هذا الموقع لمساعدتك على اكتشاف جمال محافظة الفيوم،
+                من معالم سياحية خلابة إلى أفضل الفنادق وتجارب السفر الممتعة.
+            </p>
+        </div>
+
+        <section class="features">
+            <div class="card">
+                <h3>استكشاف المعالم</h3>
+                <p>تعرف على أشهر الأماكن السياحية في الفيوم بسهولة.</p>
+            </div>
+            <div class="card">
+                <h3>حجز فنادق</h3>
+                <p>اختار أفضل الفنادق المناسبة ليك بكل سهولة.</p>
+            </div>
+            <div class="card">
+                <h3>رحلات منظمة</h3>
+                <p>احجز رحلات سياحية واستمتع بتجربة مميزة.</p>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/رحمه.jpeg' %}" alt="رحمة محمد" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">رحمة محمد صلاح الدين</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">UI/UX</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/روان.jpeg' %}" alt="روان وليد" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">روان وليد عبدالا محمد</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">UI/UX & Back-End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/منة.jpeg' %}" alt="منة الله" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">منة الله شريف عبد العزيز</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">UI/UX & Back-End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/rahma.jpeg' %}" alt="رحمة محمد" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">رحمة محمد أحمد حسين</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Graphic & Media</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/aya.jpeg' %}" alt="آية حجاج" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">آية حجاج جمعة أحمد</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Front End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/ahmed.jpeg' %}" alt="أحمد محمد" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">أحمد محمد صابر</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Front End</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/صورتك.jpg' %}" alt="محمد مصطفي" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">محمد مصطفي كامل</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Front End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/talaat.jpeg' %}" alt="محمد طلعت" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">محمد طلعت محمود</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">BackEnd,Database</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/ايه سمير.jpeg' %}" alt="آية سمير" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">آية سمير محمد</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Back-End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/الاء.jpeg' %}" alt="آلاء يحيي" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">آلاء يحيي توفيق</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Back-End Developer</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/mostafa.jpg' %}" alt="مصطفي عبد التواب" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">مصطفي عبد التواب مصطفي</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Data</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section profile-section">
+            <div class="profile-card-large">
+                <div class="profile-image-placeholder">
+                    <img src="{% static 'data/mahmoud.jpeg' %}" alt="محمود رجب" style="width:100%; height:100%; object-fit:cover; border-radius:17px;" />
+                </div>
+                <div class="profile-info">
+                    <h3>البيانات الشخصية</h3>
+                    <div class="info-row"><span class="info-label">📛 الاسم:</span><span class="info-value">محمود رجب أحمد</span></div>
+                    <div class="info-row"><span class="info-label">🎓 الكلية:</span><span class="info-value">التربية النوعية قسم تكنولوجيا التعليم</span></div>
+                    <div class="info-row"><span class="info-label">🏛️ الجامعة:</span><span class="info-value">الفيوم</span></div>
+                    <div class="info-row"><span class="info-label">📚 الفرقة:</span><span class="info-value">الرابعة</span></div>
+                    <div class="info-row"><span class="info-label">🎯 التخصص:</span><span class="info-value">Data</span></div>
+                    <div class="info-row"><span class="info-label">👨‍🏫 الإشراف:</span><span class="info-value"><b>د.أسماء صبحي</b></span></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p> ©️ 2026 Fayoum Eco Tours - جميع الحقوق محفوظة</p>
+    </footer>
+
+</body>
+</html>

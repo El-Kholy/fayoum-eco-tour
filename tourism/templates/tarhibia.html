@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayoum Eco Tours</title> 
+    <!-- ربط ملف الـ CSS الخارجي -->
+    <link rel="stylesheet" href="{% static 'tarhibia.css' %}?v=10">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" />
+    <!-- ربط الأيقونة -->
+    <link rel="icon" type="image/png" href="{% static 'data/f6eef074-94b3-490a-8f61-6602041182fe.png' %}">
+</head>
+
+<body>
+    <!-- الهيدر (اللوجو واللغات) -->
+    <header>
+        <div class="logo">
+            <img src="{% static 'data/final.logo.png' %}" alt="logo">
+        </div>
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+    <!-- قسم الـ Hero (الخلفية) -->
+    <section class="hero">
+        <!-- الصندوق الشفاف (هذا هو الجزء اللي صلحناه في الـ CSS) -->
+        <div class="hero-content">
+            <h1 id="mainTitle" data-ar="إستكشف سحر الفيوم" data-en="Explore the Magic of Fayoum">
+                إستكشف سحر الفيوم
+            </h1>
+            <p id="subTitle">
+                <span data-ar="من البحيرات إلى الواحات تجربة" data-en="From lakes to oases experience">
+                    من البحيرات إلى الواحات تجربة
+                </span>
+                <span data-ar="لا تُنسى" data-en="unforgettable">لا تُنسى</span>
+                <span data-ar="في قلب مصر" data-en="in the heart of Egypt">في قلب مصر</span>
+            </p>
+            <div class="buttons">
+                <a class="link1" href="{% url 'login' %}" data-ar="تسجيل الدخول" data-en="Login">
+                    تسجيل الدخول
+                </a>
+                <a class="link2" href="{% url 'signup' %}" data-ar="إنشاء حساب جديد" data-en="Create New Account">
+                    إنشاء حساب جديد
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- الفوتر -->
+    <footer data-ar="© 2026 Fayoum Eco Tours - جميع الحقوق محفوظة"
+            data-en="© 2026 Fayoum Eco Tours - All Rights Reserved">
+        © 2026 Fayoum Eco Tours - جميع الحقوق محفوظة
+    </footer>
+    <!-- ربط الجافا سكريبت -->
+    <script src="{% static 'tarhibia.js' %}"></script>
+</body>
+</html>

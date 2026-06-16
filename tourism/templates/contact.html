@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    <link rel="stylesheet" href="{% static 'responsive.css' %}" >
+    <link rel="icon" type="image/png" href="{% static 'data/final.logo.png' %}">
+</head>   
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="lang">
+            <button onclick="changeLang('ar')">AR</button>
+            <span>|</span>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'index' %}" id="nav1">الصفحة الرئيسية</a></li>
+            <li><a href="{% url 'restaurants' %}" id="nav2">المطاعم</a></li>
+            <li><a href="{% url 'landmarks' %}" id="nav3">المعالم</a></li>
+            <li><a href="{% url 'hotel' %}" id="nav4">الفنادق</a></li>
+            <li><a href="{% url 'reservation' %}" id="nav5">الحجوزات</a></li>
+            <li><a href="{% url 'guidelines' %}" id="nav6">الإرشادات</a></li>
+            <li><a href="{% url 'about' %}" id="nav7">من نحن</a></li>
+            <li><a href="{% url 'contact' %}" id="nav8">تواصل معنا</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="{% static 'data/final.logo.png' %}" alt="logo">
+        </div>
+
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+    </header>
+
+     
+    <!-- Hero -->
+    <section class="hero">
+        <div class="overlay">
+            <h1 id="heroTitle">تواصل معنا</h1>
+            <p id="heroSub">نحن هنا لمساعدتك</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-container">
+
+        <div class="contact-info">
+            <h2 id="infoTitle">معلومات التواصل</h2>
+            <p><i class="fa-solid fa-phone"></i> +20 10 25687826</p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:mohamed.tal3at.08@gmail.com">mohamed.tal3at.08@gmail.com</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> <span id="location">الفيوم - مصر</span></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1CoaBmiDXj/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/mo.talaat.12?igsh=N3k3cGd2cDlyM3gy" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:mohamed.tal3at.08@gmail.com"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2 id="formTitle">أرسل لنا رسالة</h2>
+            <form>
+                <input type="text"  id="inputName"    placeholder="الاسم" required>
+                <input type="email" id="inputEmail"   placeholder="البريد الإلكتروني" required>
+                <input type="text"  id="inputSubject" placeholder="الموضوع" required>
+                <textarea           id="inputMsg"     placeholder="رسالتك"></textarea>
+                <button type="submit" id="submitBtn">إرسال الرسالة</button>
+            </form>
+        </div>
+
+    </section>
+    <script src="{% static 'Contact.js' %}"></script>
+
+</body>
+</html>
+

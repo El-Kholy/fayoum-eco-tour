@@ -1,0 +1,123 @@
+
+
+body { 
+  font-family: 'Segoe UI', system-ui, sans-serif; 
+}
+
+/* NAVBAR */
+.navbar {
+  background: #DBC5B3;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* PROFILE ICON */
+.profile a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.profile a:hover {
+  background: #006666;
+  transform: scale(1.1);
+}
+.logo {
+  width: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  font-weight: 600;
+}
+
+/* LANGUAGE */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang button {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: teal;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang button:hover {
+  background: rgba(0, 128, 128, 0.15);
+}
+
+a:hover {
+  color: blue;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .lang {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .nav-links {
+    font-size: 14px;
+  }
+
+  .lang button {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
